@@ -7,9 +7,9 @@ int main() {
 	setlocale(LC_ALL, "portuguese");
 	
     int i, numeros[5];
-    int pares = 0, impares = 0;
+    int pares = 0, impares = 0, somaPares = 0, somaImpares = 0;
     int positivos = 0, negativos = 0;
-    int maior, menor;
+    int maior = INT_MIN, menor = INT_MAX;
     float mediaTotal = 0, mediaPares = 0, mediaImpares = 0;
 
     // Solicitando números.
@@ -19,9 +19,11 @@ int main() {
 
     // Pares e ímpares.
     if (numeros[i] % 2 == 0) {
-            pares += numeros[i];
+            pares++;
+            somaPares += numeros[i];
         } else {
-            impares += numeros[i];
+            impares++;
+            somaImpares += numeros[i];
         }
 
     // Positivos e negativos.
@@ -39,13 +41,8 @@ int main() {
         }
 
     // Média dos pares e ímpares.
-        if (numeros[i] % 2 == 0) {
-            mediaPares += numeros[i] / pares;
-        } else {
-            mediaImpares += numeros[i] / impares;
-        }
-        
-
+        mediaPares = somaPares / (float) pares;
+        mediaImpares = somaImpares / (float) impares;
     // Média total.
         mediaTotal += numeros[i] / 5;
     }
