@@ -48,6 +48,7 @@ int main() {
     }
 
     // Exibindo resultados.
+    system("cls || clear");
     printf("=== Exibindo resultados ===\n");
     printf("Quantidade de números pares: %d\n", pares);
     printf("Quantidade de números ímpares: %d\n", impares);
@@ -61,7 +62,7 @@ int main() {
     printf("Média de números inseridos: %.2f\n", mediaTotal);
     printf("Números lidos na ordem inversa:\n");
     for (i = 4; i >= 0; i--) {
-         printf("%d", numeros[i]);
+         printf("%d\n", numeros[i]);
     }
 
     return 0;
